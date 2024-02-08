@@ -11,18 +11,21 @@ export const storeApi = createApi({
         url: `/stores`,
         method: "GET",
       }),
+      providesTags: ["Store"],
     }),
     getStoresById: builder.query({
       query: ({ id }) => ({
         url: `/stores/${id}`,
         method: "GET",
       }),
+      providesTags: ["Store"],
     }),
     getProductsByStoreId: builder.query({
       query: ({ id }) => ({
         url: `/stores/${id}/products`,
         method: "GET",
       }),
+      providesTags: ["Store"],
     }),
     addProductToStore: builder.mutation({
       query({ id, ...body }) {
@@ -32,6 +35,23 @@ export const storeApi = createApi({
           body,
         };
       },
+      invalidatesTags: ["Store"],
+    }),
+    getProductByProductId: builder.query({
+      query: ({ storeId, productId }) => ({
+        url: `/stores/${storeId}/products/${productId}`,
+        method: "GET",
+      }),
+      providesTags: ["Store"],
+    }),
+    deleteProductFromStore: builder.mutation({
+      query({ storeId, productId }) {
+        return {
+          url: `/stores/${storeId}/products/${productId}`,
+          method: "DELETE",
+        };
+      },
+      invalidatesTags: ["Store"],
     }),
   }),
 });
@@ -41,4 +61,6 @@ export const {
   useGetStoresByIdQuery,
   useGetProductsByStoreIdQuery,
   useAddProductToStoreMutation,
+  useGetProductByProductIdQuery,
+  useDeleteProductFromStoreMutation,
 } = storeApi;

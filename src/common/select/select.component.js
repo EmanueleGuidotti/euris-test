@@ -3,8 +3,14 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import SelectMui from "@mui/material/Select";
+import PropTypes from "prop-types";
 
-const Select = ({ selectData, handleChange, selectValue, selectName }) => {
+const SelectComponent = ({
+  selectData,
+  handleChange,
+  selectValue,
+  selectName,
+}) => {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
@@ -29,4 +35,11 @@ const Select = ({ selectData, handleChange, selectValue, selectName }) => {
   );
 };
 
-export { Select };
+SelectComponent.propTypes = {
+  selectData: PropTypes.array,
+  handleChange: PropTypes.func,
+  selectValue: PropTypes.string,
+  selectName: PropTypes.string,
+};
+
+export { SelectComponent };
