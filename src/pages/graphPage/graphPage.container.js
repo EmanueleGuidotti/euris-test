@@ -1,0 +1,3 @@
+const GraphPageContainer = () => {};
+
+export { GraphPageContainer };

@@ -22,7 +22,7 @@ const Item = styled(Box)(({ theme }) => ({
 const ProductDetailContainer = () => {
   const { productId, storeId } = useParams();
   const navigate = useNavigate();
-  const [deleteProduct, response] = useDeleteProductFromStoreMutation();
+  const [deleteProduct] = useDeleteProductFromStoreMutation();
   const { data, error, isLoading } = useGetProductByProductIdQuery(
     { productId, storeId },
     { skip: !productId || !storeId }
@@ -79,7 +79,7 @@ const ProductDetailContainer = () => {
               <p>{data?.employee}</p>
             </Grid>
             {data?.reviews.map((review) => (
-              <Grid item xs={12}>
+              <Grid item xs={12} key={review}>
                 <small>Recensione:</small>
                 <p>{review}</p>
               </Grid>

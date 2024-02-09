@@ -28,9 +28,9 @@ export const storeApi = createApi({
       providesTags: ["Store"],
     }),
     addProductToStore: builder.mutation({
-      query({ id, ...body }) {
+      query({ storeId, ...body }) {
         return {
-          url: `/stores/${id}/products`,
+          url: `/stores/${storeId}/products`,
           method: "POST",
           body,
         };
@@ -53,6 +53,13 @@ export const storeApi = createApi({
       },
       invalidatesTags: ["Store"],
     }),
+    getStatsByStoreId: builder.query({
+      query: ({ storeId }) => ({
+        url: `/stores/${storeId}/stats/categories`,
+        method: "GET",
+      }),
+      providesTags: ["Store"],
+    }),
   }),
 });
 
@@ -63,4 +70,5 @@ export const {
   useAddProductToStoreMutation,
   useGetProductByProductIdQuery,
   useDeleteProductFromStoreMutation,
+  useGetStatsByStoreIdQuery,
 } = storeApi;

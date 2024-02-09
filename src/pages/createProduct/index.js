@@ -1,1 +1,1 @@
-export { CreateProduct } from "./createProduct.container";
+export { CreateProductContainer } from "./createProduct.container";

@@ -24,7 +24,7 @@ const ProductComponent = ({
 }) => {
   const navigate = useNavigate();
 
-  const goToDetail = (event) => {
+  const goToDetailHandler = (event) => {
     event.preventDefault();
     navigate(`/${storeId}/${productId}`);
   };
@@ -47,7 +47,7 @@ const ProductComponent = ({
             <p>{description}</p>
           </Grid>
           <Grid item xs={12} style={{ textAlign: "right" }}>
-            <Button onClick={goToDetail} variant="contained">
+            <Button onClick={goToDetailHandler} variant="contained">
               Dettaglio
             </Button>
           </Grid>
