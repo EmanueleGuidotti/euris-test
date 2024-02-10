@@ -2,9 +2,17 @@
 
 A test project for Euris
 
+## Downlad and install dependancies
+
+Download in an empty directory this project with `git clone`
+
+Move to the euris-test directory
+
+Run `npm install` to install all the dependancies
+
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, after install all the dependancies you can run:
 
 ### `npm start`
 
