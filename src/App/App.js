@@ -5,6 +5,7 @@ import { store } from "./store";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CreateProductContainer } from "../pages/createProduct";
+import { GraphPageContainer } from "../pages/graphPage";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/createProduct/:storeId",
     element: <CreateProductContainer />,
+  },
+  {
+    path: "/graph/:storeId",
+    element: <GraphPageContainer />,
   },
 ]);
 

@@ -45,6 +45,7 @@ const CreateProductContainer = () => {
       ...values,
       reviews: [...values.reviews, reviewValue],
     }));
+    setReviewValue("");
   };
 
   const formChangeHandler = (event) => {

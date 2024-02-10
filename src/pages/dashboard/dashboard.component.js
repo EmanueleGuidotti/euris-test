@@ -38,6 +38,10 @@ const DashboardComponent = ({ stores }) => {
     navigate(`/createProduct/${storeId}`);
   };
 
+  const graphHandler = () => {
+    navigate(`/graph/${storeId}`);
+  };
+
   return (
     <Container maxWidth="sm">
       <Box
@@ -69,7 +73,7 @@ const DashboardComponent = ({ stores }) => {
           >
             Aggiungi prodotto
           </Button>
-          <Button variant="outlined" onClick={addProductHandler}>
+          <Button variant="outlined" onClick={graphHandler} disabled={!storeId}>
             Grafico
           </Button>
           <Button
