@@ -3,15 +3,17 @@ import {
   useDeleteProductFromStoreMutation,
   useGetProductByProductIdQuery,
 } from "../../services/store.services";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
+import {
+  Container,
+  Box,
+  Grid,
+  Paper,
+  CircularProgress,
+  styled,
+  Button,
+} from "@mui/material";
 import EuroIcon from "@mui/icons-material/Euro";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import CircularProgress from "@mui/material/CircularProgress";
 
 const Item = styled(Box)(({ theme }) => ({
   ...theme.typography.body2,
@@ -78,7 +80,7 @@ const ProductDetailContainer = () => {
               <small>Pasticcere:</small>
               <p>{data?.employee}</p>
             </Grid>
-            {data?.reviews.map((review) => (
+            {data?.reviews?.map((review) => (
               <Grid item xs={12} key={review}>
                 <small>Recensione:</small>
                 <p>{review}</p>

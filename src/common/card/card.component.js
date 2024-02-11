@@ -31,8 +31,13 @@ const CardComponent = ({ title, price, description, productId, storeId }) => {
           {description}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small" onClick={goToDetailHandler}>
+      <CardActions
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
+        <Button size="small" variant="contained" onClick={goToDetailHandler}>
           Dettaglio
         </Button>
       </CardActions>

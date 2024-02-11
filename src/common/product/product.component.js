@@ -1,9 +1,5 @@
-import { Grid } from "@mui/material";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
+import { Button, Box, styled, Paper, Grid } from "@mui/material";
 import EuroIcon from "@mui/icons-material/Euro";
-import Button from "@mui/material/Button";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
