@@ -1,10 +1,7 @@
 import { useState } from "react";
 import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
+import { Box, Grid, TextField, styled } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import TextField from "@mui/material/TextField";
-import { styled } from "@mui/material/styles";
 import { Paper, Alert, Button } from "@mui/material";
 import { useAddProductToStoreMutation } from "../../services/store.services";
 

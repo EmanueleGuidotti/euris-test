@@ -3,14 +3,7 @@ import { SelectComponent } from "../../common/select";
 import { useGetProductsByStoreIdQuery } from "../../services/store.services";
 import { ProductComponent } from "../../common/product";
 import PropTypes from "prop-types";
-import {
-  Button,
-  FormControl,
-  Box,
-  Container,
-  Grid,
-  CircularProgress,
-} from "@mui/material";
+import { Button, Box, Container, Grid, CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { CardComponent } from "../../common/card";
 import GridViewIcon from "@mui/icons-material/GridView";
